@@ -6,7 +6,9 @@ header('Content-type: application/json');
     $message = $update["message"];
     $telegram_id = $message['from']['id'];
     $userInput = $message['text'];
-    $replyText = 'سلام';
+    if ($userInput == 'سلام') {
+      $replyText = 'سلام' . '/n' . 'یک عدد دلخواه بین 1-10 انتحاب کنید';
+    }
     $reply = [
         'method' => 'sendMessage',
         'chat_id' => $message['chat']['id'],
