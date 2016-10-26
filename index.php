@@ -6,10 +6,12 @@ header('Content-type: application/json');
     $message = $update["message"];
     $telegram_id = $message['from']['id'];
     $userInput = $message['text'];
-    if ($userInput == 'سلام') {
-      $replyText = 'sسلام';// . '/n' . 'یک عدد دلخواه بین 1-10 انتحاب کنید';
+    if ($userInput == 'شروع') {
+      $replyText = 'یک عدد دلخواه بین 1-10 انتحاب کنید';
     } elseif (gettype($userInput) == 'integer') {
       $replyText = $userInput;
+    } else {
+      $replyText = 'سلام برای شروع بازی شروع را بزنید';
     }
     $reply = [
         'method' => 'sendMessage',
@@ -17,5 +19,3 @@ header('Content-type: application/json');
         'text' => $replyText,
     ];
     echo json_encode($reply);
-//kkkkkk
-//test
