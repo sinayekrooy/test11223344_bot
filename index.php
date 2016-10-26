@@ -9,7 +9,7 @@ header('Content-type: application/json');
     $userInput = $message['text'];
     if ($userInput == 'شروع') {
       $replyText = 'یک عدد دلخواه بین 1-10 انتحاب کنید';
-    } elseif (true) {
+    } elseif (1) {
       $replyText = gettype($userInput);
     } else {
       $replyText = 'سلام برای شروع بازی شروع را بزنید';
