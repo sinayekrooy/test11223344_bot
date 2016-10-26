@@ -9,8 +9,8 @@ header('Content-type: application/json');
     $userInput = $message['text'];
     if ($userInput == 'شروع') {
       $replyText = 'یک عدد دلخواه بین 1-10 انتحاب کنید';
-    } elseif (gettype($userInput) == gettype($int)) {
-      $replyText = $userInput;
+    } elseif (true) {
+      $replyText = gettype($userInput);
     } else {
       $replyText = 'سلام برای شروع بازی شروع را بزنید';
     }
@@ -20,3 +20,4 @@ header('Content-type: application/json');
         'text' => $replyText,
     ];
     echo json_encode($reply);
+//gettype($userInput) == gettype($int)
