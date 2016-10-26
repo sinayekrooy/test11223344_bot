@@ -7,7 +7,9 @@ header('Content-type: application/json');
     $telegram_id = $message['from']['id'];
     $userInput = $message['text'];
     if ($userInput == 'سلام') {
-      $replyText = 'سلام' . '/n' . 'یک عدد دلخواه بین 1-10 انتحاب کنید';
+      $replyText = 'sسلام';// . '/n' . 'یک عدد دلخواه بین 1-10 انتحاب کنید';
+    } elseif (gettype($userInput) == 'integer') {
+      $replyText = $userInput;
     }
     $reply = [
         'method' => 'sendMessage',
@@ -15,3 +17,4 @@ header('Content-type: application/json');
         'text' => $replyText,
     ];
     echo json_encode($reply);
+//kkkkkk
