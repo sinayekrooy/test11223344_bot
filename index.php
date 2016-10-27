@@ -12,7 +12,7 @@ header('Content-type: application/json');
 
     if (!isset($_SESSION['appName'])) {
       switch ($userInput) {
-        case 's':
+        case 'start':
           $_SESSION['appName'] = "gameStart";
           break;
 
@@ -33,7 +33,7 @@ header('Content-type: application/json');
     }
 
     function gameStart($input) {
-        if ($input == 'خروج') {
+        if ($input == 'exit') {
           session_destroy();
           return "bye";
         } elseif ($input == "بیشتر") {
@@ -58,7 +58,7 @@ header('Content-type: application/json');
          $output = "تبریک عدد مورد نظر یافت شد";
          return $output;
 
-       } elseif ($input == "شروع بازی") {
+       } elseif ($input == "start") {
 
           $_SESSION['big'] = 10;
           $_SESSION['small'] = 1;
