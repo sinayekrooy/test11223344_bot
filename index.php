@@ -14,7 +14,7 @@ $replyText = "";
 
 if (!isset($_SESSION['appName'])) {
     switch ($userInput) {
-        case 'start':
+        case '/start':
             $_SESSION['appName'] = "gameStart";
             break;
 
@@ -39,7 +39,7 @@ function gameStart($input)
     if ($input == 'exit') {
         session_destroy();
         return "bye";
-    } elseif ($input == "more") {
+    } elseif ($input == "/more") {
 
         $_SESSION['big'] = $_SESSION['rand'] - 1;
         $_SESSION['rand'] = mt_rand($_SESSION['small'], $_SESSION['big']);
@@ -47,7 +47,7 @@ function gameStart($input)
         $output = "\n" . "آیا عدد انتخاب شده" . $_SESSION['rand'] . "می باشد؟"
             . "پاسخ را به صورت '" . "کمتر'" . "'بشتر'" . "'مساوی'" . "ارسال کنید";
         return $output;
-    } elseif ($input == "less") {
+    } elseif ($input == "/less") {
 
 
         $_SESSION['small'] = $_SESSION['rand'] + 1;
@@ -56,12 +56,12 @@ function gameStart($input)
             . "پاسخ را به صورت '" . "کمتر'" . "'بشتر'" . "'مساوی'" . "ارسال کنید";
         return $output;
 
-    } elseif ($input == "equal") {
+    } elseif ($input == "/equal") {
 
         $output = "تبریک عدد مورد نظر یافت شد";
         return $output;
 
-    } elseif ($input == "start") {
+    } elseif ($input == "/start") {
 
         $_SESSION['big'] = 10;
         $_SESSION['small'] = 1;
