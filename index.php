@@ -42,7 +42,7 @@ function gameStart($input)
     } elseif ($input == "more") {
 
         $_SESSION['big'] = $_SESSION['rand'] - 1;
-        $_SESSION['rand'] = rand($_SESSION['small'], $_SESSION['big']);
+        $_SESSION['rand'] = mt_rand($_SESSION['small'], $_SESSION['big']);
 
         $output = "\n" . "آیا عدد انتخاب شده" . $_SESSION['rand'] . "می باشد؟"
             . "پاسخ را به صورت '" . "کمتر'" . "'بشتر'" . "'مساوی'" . "ارسال کنید";
@@ -51,7 +51,7 @@ function gameStart($input)
 
 
         $_SESSION['small'] = $_SESSION['rand'] + 1;
-        $_SESSION['rand'] = rand($_SESSION['small'], $_SESSION['big']);
+        $_SESSION['rand'] = mt_rand($_SESSION['small'], $_SESSION['big']);
         $output = "\n" . "آیا عدد انتخاب شده" . $_SESSION['rand'] . "می باشد؟"
             . "پاسخ را به صورت '" . "کمتر'" . "'بشتر'" . "'مساوی'" . "ارسال کنید";
         return $output;
@@ -65,7 +65,7 @@ function gameStart($input)
 
         $_SESSION['big'] = 10;
         $_SESSION['small'] = 1;
-        $_SESSION['rand'] = rand($_SESSION['small'], $_SESSION['big']);
+        $_SESSION['rand'] = mt_rand($_SESSION['small'], $_SESSION['big']);
 
         $output = "به بازی حدس عدد خوش آمدید" . "\n" . "یک عدد دلخواه از 1 تا 10 در نظر بگیرید"
             . "\n" . "آیا عدد انتخاب شده" . $_SESSION['rand'] . "می باشد؟"
