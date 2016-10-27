@@ -41,7 +41,7 @@ function gameStart($input)
         return "bye";
     } elseif ($input == "/more") {
 
-        $_SESSION['big'] = $_SESSION['rand'] - 1;
+        $_SESSION['small'] = $_SESSION['rand'] + 1;
         $_SESSION['rand'] = mt_rand($_SESSION['small'], $_SESSION['big']);
 
         $output = "\n" . "آیا عدد انتخاب شده" . $_SESSION['rand'] . "می باشد؟"
@@ -50,7 +50,7 @@ function gameStart($input)
     } elseif ($input == "/less") {
 
 
-        $_SESSION['small'] = $_SESSION['rand'] + 1;
+        $_SESSION['big'] = $_SESSION['rand'] - 1;
         $_SESSION['rand'] = mt_rand($_SESSION['small'], $_SESSION['big']);
         $output = "\n" . "آیا عدد انتخاب شده" . $_SESSION['rand'] . "می باشد؟"
             . "پاسخ را به صورت '" . "کمتر'" . "'بشتر'" . "'مساوی'" . "ارسال کنید";
