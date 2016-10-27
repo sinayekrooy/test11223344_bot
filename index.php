@@ -8,9 +8,9 @@ header('Content-type: application/json');
     $message = $update["message"];
     $telegram_id = $message['from']['id'];
     $userInput = $message['text'];
-    $replyText = "";
+    $replyText = $message['text'];
 
-    if (!isset($_SESSION['appName'])) {
+    /*if (!isset($_SESSION['appName'])) {
       switch ($userInput) {
         case 'start':
           $_SESSION['appName'] = "gameStart";
@@ -72,7 +72,7 @@ header('Content-type: application/json');
         } else {
           return "دستور وارد شده صحیح نمی باشد" . "مجدد تلاش فرمایید";
         }
-    }
+    }*/
 
     $reply = [
         'method' => 'sendMessage',
