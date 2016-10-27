@@ -36,7 +36,7 @@ header('Content-type: application/json');
         if ($input == 'exit') {
           session_destroy();
           return "bye";
-        } elseif ($input == "بیشتر") {
+        } elseif ($input == "more") {
 
           $_SESSION['big'] = $_SESSION['rand'];
           $_SESSION['rand'] = rand($_SESSION['small'], $_SESSION['big']);
@@ -45,7 +45,7 @@ header('Content-type: application/json');
                   . "پاسخ را به صورت '" . "کمتر'" . "'بشتر'" . "'مساوی'" . "ارسال کنید";
           return $output;
         }
-        elseif ($input == "کمتر") {
+        elseif ($input == "less") {
 
          $_SESSION['small'] = $_SESSION['rand'];
          $_SESSION['rand'] = rand($_SESSION['small'], $_SESSION['big']);
@@ -53,7 +53,7 @@ header('Content-type: application/json');
                  . "پاسخ را به صورت '" . "کمتر'" . "'بشتر'" . "'مساوی'" . "ارسال کنید";
          return $output;
 
-       } elseif ($input == "مساوی" ) {
+       } elseif ($input == "equal" ) {
 
          $output = "تبریک عدد مورد نظر یافت شد";
          return $output;
