@@ -8,9 +8,6 @@ header('Content-type: application/json');
     $message = $update["message"];
     $telegram_id = $message['from']['id'];
     $userInput = $message['text'];
-
-    $userInput = (isset($_POST['inputBox'])) ? $_POST['inputBox'] : "" ;
-
     $replyText = "";
 
     if (!isset($_SESSION['appName'])) {
