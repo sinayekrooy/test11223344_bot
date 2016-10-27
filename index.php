@@ -36,7 +36,7 @@ if (isset($_SESSION['appName'])) {
 
 function gameStart($input)
 {
-    if ($input == 'exit') {
+    if ($input == '/exit') {
         session_destroy();
         return "bye";
     } elseif ($input == "/more") {
