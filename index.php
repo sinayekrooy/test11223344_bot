@@ -6,8 +6,8 @@ $update = json_decode(file_get_contents('php://input'), true);
 
 $message = $update["message"];
 $telegram_id = $message['from']['id'];
-session_start();
 session_id($telegram_id);
+session_start();
 
 $userInput = $message['text'];
 $replyText = "";
