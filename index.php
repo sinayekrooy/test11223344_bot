@@ -12,7 +12,7 @@ header('Content-type: application/json');
 
     if (!isset($_SESSION['appName'])) {
       switch ($userInput) {
-        case 'شروع بازی':
+        case 's':
           $_SESSION['appName'] = "gameStart";
           break;
 
